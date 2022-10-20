@@ -1,0 +1,77 @@
+@import "./globals.scss";
+
+main {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+.product-container {
+
+    margin: 2rem auto;
+    max-width: calc(100% - 80px);
+
+
+    .product-card-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+        gap: 2rem;
+
+
+        .card {
+
+            background-color: white;
+
+
+            .product-item-image {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+
+
+
+
+                img {
+                    width: 800px;
+                    height: 300px;
+                    object-fit: cover;
+
+
+                }
+            }
+
+            .product-info-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 1rem;
+                padding: 1rem;
+
+
+            }
+        }
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+button {
+    font-weight: 700;
+    background-color: #ff0055;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+
+}
