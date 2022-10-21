@@ -3,7 +3,9 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-    return <main>{children}</main>
+    return <main id="page-wrapper">
+        {children}
+        </main>
 
 
 

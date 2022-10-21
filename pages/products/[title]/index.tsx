@@ -3,19 +3,20 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import axios from 'axios'
 import React from "react";
-import Card from "../../../components/Card";
+import Card from "../../../components/ProductCard";
 import { ProductData } from "../../../types";
+import { useUserContext } from "../../../context/UserContext";
+import Link from "next/link";
 
 const Product = () => {
+    const {
+        userLogin,
+
+    } = useUserContext()
     const [product, setProduct] = useState<ProductData | {}>({});
     const router = useRouter()
 
-
-
-
-
-
-    React.useEffect(() => {
+    useEffect(() => {
         if (router.isReady) {
             const { title } = router.query;
             axios.get(`http://localhost:3000/api/products/${title}`)
@@ -24,9 +25,6 @@ const Product = () => {
                 })
                 .catch(error => console.log(error))
         }
-
-
-
     }, [router.isReady]);
 
     const handleBuyClick = (prod: ProductData) => {
@@ -35,9 +33,11 @@ const Product = () => {
 
     return (
         <>
-            <section className="product-wrapper">
+
+            {userLogin ? <section className="product-wrapper">
                 <Card title={product.title} price={product.price} imageUrl={product.imageUrl} handleClick={() => handleBuyClick(product)} />
-            </section>
+            </section> : <h1>You need to be logged in to view this page. Please go to home page to login <Link href="/">here</Link></h1>}
+
         </>
     )
 }

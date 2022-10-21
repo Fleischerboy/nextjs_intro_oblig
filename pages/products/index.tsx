@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react"
-import Cards from "../../components/Cards";
 import { ProductData } from "../../types";
 import Router from 'next/router'
+import ProductCards from "../../components/ProductCards";
+import { useUserContext } from "../../context/UserContext";
+import Link from "next/link";
 
 const Products = () => {
 
+    const {
+        userLogin,
+
+    } = useUserContext()
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -27,9 +33,10 @@ const Products = () => {
     }
 
     return (<>
-        <div className="product-container">
-            <Cards cards={products} handleClick={handleClick} />
-        </div>
+        {userLogin ? <div className="product-container">
+            <ProductCards ProductCards={products} handleClick={handleClick} />
+        </div> : <h1>You need to be logged in to view this page. Please go to home page to login <Link href="/">here</Link></h1>}
+
 
 
     </>

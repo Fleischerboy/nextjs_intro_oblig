@@ -1,9 +1,11 @@
 @import "./globals.scss";
 
-main {
+#page-wrapper {
     width: 60%;
     margin: 0 auto;
 }
+
+
 
 
 .product-container {
@@ -16,6 +18,7 @@ main {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
         gap: 2rem;
+
 
 
         .card {
@@ -60,18 +63,77 @@ main {
 }
 
 
+.login-wrapper {
+    height: 90vh;
+    display: grid;
+    place-content: center;
+
+}
+
+.user-selection {
 
 
+    h1 {
+        font-size: 2.2rem;
+        border-bottom: solid 1px black;
+    }
+
+    .user-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        font-size: 1.6rem;
+        border-bottom: solid 1px black;
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            gap: 2.5rem;
+
+            span:nth-child(2) {
+                // funker ikke idk why
+                place-self: end;
+            }
+        }
+    }
+
+}
 
 
 button {
     font-weight: 700;
     background-color: #ff0055;
     border: none;
+    font-size: 1.5rem;
     border-radius: 5px;
     color: white;
     text-decoration: none;
     cursor: pointer;
     padding: 0.5rem 1.5rem;
+    margin-right: 5px;
 
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+aside {
+    position: fixed;
+    display: flex;
+    top: 25px;
+    right: 25px;
+    gap: 1rem;
+    font-size: 1.4rem;
+    color: white;
+    box-shadow: 0 3px 6px rgb(0, 0, 0, 0.1);
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    background-color: #ff0055
+}
+
+p {
+    font-size: 1.6rem;
 }

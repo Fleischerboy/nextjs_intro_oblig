@@ -7,8 +7,10 @@ export async function listAllUsers(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log('hello')
-  res.send('liste ut brukere')
+  const users = await usersService.getAllUsers()
+  if (users.error) return res.status(500).json(users.error)
+
+  return res.status(200).json(users)
 }
 
 export const createUser = async (

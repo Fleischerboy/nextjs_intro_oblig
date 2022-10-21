@@ -1,13 +1,14 @@
-import Card from "./Card";
+import ProductCard from "./ProductCard";
 
-const Cards = ({ cards, handleClick }: any) => {
+
+const ProductCards = ({ ProductCards, handleClick }: any) => {
 
     return (
         <>
             <ul className="product-card-list">
-                {cards.map((prod, index) => (
+                {ProductCards.map((prod, index) => (
                     <li key={prod + index} className="product-card">
-                        <Card
+                        <ProductCard
                             title={prod.title}
                             price={prod.price}
                             imageUrl={prod.imageUrl}
@@ -24,4 +25,4 @@ const Cards = ({ cards, handleClick }: any) => {
 
 }
 
-export default Cards;
+export default ProductCards;

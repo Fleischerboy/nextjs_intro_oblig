@@ -1,5 +1,14 @@
 import db from '../../lib/db'
 
+export const findMany = async () => {
+  try {
+    const users = await db.user.findMany()
+    return { success: true, data: users }
+  } catch (e) {
+    return { success: false, error: 'Failed finding users' }
+  }
+}
+
 export const create = async (data) => {
   try {
     const user = await db.user.create({ data })

@@ -1,9 +1,12 @@
+import router from "next/router";
 import Button from "./Button";
 
-const Card = ({ title, price, imageUrl, handleClick, type }: any) => {
+const ProductCard = ({ title, price, imageUrl, handleClick, type }: any) => {
 
 
-
+    const handleGoBack = () => {
+        router.push("/products")
+    }
 
     return (
         <>
@@ -25,6 +28,7 @@ const Card = ({ title, price, imageUrl, handleClick, type }: any) => {
                     </> :
                         <div className="button-wrapper">
                             <Button onClick={handleClick} text="Buy" />
+                            <Button onClick={handleGoBack} text="Go back" />
                         </div>
                     }
 
@@ -35,4 +39,4 @@ const Card = ({ title, price, imageUrl, handleClick, type }: any) => {
 
 }
 
-export default Card;
+export default ProductCard;
