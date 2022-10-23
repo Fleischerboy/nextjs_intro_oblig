@@ -2,6 +2,7 @@ import { createContext } from "react";
 import useUser from "../hooks/useUser";
 import React from "react";
 import { UserData } from "../types";
+import Button from "../components/Button";
 
 
 export type UserContext = {
@@ -17,9 +18,12 @@ const UserLoginInfoData = ({ data }: { data?: UserData | null }) => {
     } = useUserContext()
     return (
         <>
-            {userLogin && <aside>
+            {userLogin && <aside id="user-info">
                 <span>User: {data?.nickname}</span> | <span>{data?.email}</span>
-            </aside>}
+            </aside>
+            }
+
+            
 
 
         </>

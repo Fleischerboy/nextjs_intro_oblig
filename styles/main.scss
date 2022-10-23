@@ -2,7 +2,8 @@
 
 #page-wrapper {
     width: 60%;
-    margin: 0 auto;
+    margin: auto;
+
 }
 
 
@@ -119,7 +120,7 @@ h2 {
     font-size: 2.2rem;
 }
 
-aside {
+#user-info {
     position: fixed;
     display: flex;
     top: 25px;
@@ -134,6 +135,59 @@ aside {
     background-color: #ff0055
 }
 
+
+
 p {
     font-size: 1.6rem;
+}
+
+.form-wrapper {
+    display: grid;
+    height: 90vh;
+    place-content: center;
+
+    form.create-product-form {
+        display: grid;
+        grid-template-columns: row;
+        gap: 1rem;
+
+
+
+
+        input {
+            width: 300px;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 1.6rem;
+            border: 1px solid black;
+
+            &:placeholder {
+                filter: contrast(1.2);
+            }
+        }
+
+        button {
+            width: 40%;
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+
+    .error {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: red;
+
+    }
+
+    .success {
+
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: green;
+    }
 }

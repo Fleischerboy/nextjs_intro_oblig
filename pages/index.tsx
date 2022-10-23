@@ -40,6 +40,9 @@ const Home: NextPage = () => {
     router.push("/products")
   }
 
+  const handleCreateNewProductBtn = () => {
+    router.push("/products/create")
+  }
 
   return (
     <>
@@ -62,6 +65,8 @@ const Home: NextPage = () => {
         </div> : <div className="login-wrapper">
           <h2>welcome user: {userLogin.nickname}</h2>
           <Button text="Visit the shop here" onClick={handleGoToShopBtn} />
+          <br />
+          <Button text="Create new product" onClick={handleCreateNewProductBtn} />
         </div>}
 
     </>
